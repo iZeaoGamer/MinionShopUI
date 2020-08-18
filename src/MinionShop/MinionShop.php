@@ -17,13 +17,12 @@ class MinionShop extends PluginBase{
             "Minion" => "Minion",
             "FormAPI" => "FormAPI"] as $plugins){
             if(!$this->getServer()->getPluginManager()->getPlugin($plugins)){
-                $this->getLogger()->error("Bạn chưa cài plugin ". $plugins .". Vui lòng cài đủ 3 plugin: FormAPI, EconomyAPI, Minion để plugin có thể hoạt động trơn tru.");
+                $this->getLogger()->error("You have not installed the plugin ". $plugins.". Please install all 3 plugins: FormAPI, EconomyAPI, Minion for the plugin to work smoothly.
                 $this->getServer()->getPluginManager()->disablePlugin($this);
                 return;
             }
         }
-        $this->getLogger()->info("§l§a> §cYoutube: §fyoutube.com/c/SoiOniichan");
-        $this->getLogger()->info("§l§a> §6Github: §fgithub.com/GamerSoiCon");
+
         @mkdir($this->getDataFolder());
         $this->saveResource("config.yml");
         $this->config = new Config($this->getDataFolder() . "config.yml", Config::YAML);
