@@ -1,38 +1,38 @@
-title: "§l§e<--- §fCửa Hàng Minion §e--->"
+title: "§l§6 <--- §2Minion §cStore §6 --->"
 
 
-prefix: "§e[§fMinionShop§e]"
+prefix: "§6 [§2Minion§cShop§6]"
 
 
-# Giá mua 1 con Minion.
+# Price to buy 1 Minion.
 price: 100
 
 
-# Giá bán 1 con Minion.
+# Price for 1 Minion.
 sell: 50
 
 
-# Số Minion tối đa mà người chơi có thể mua.
+# Maximum number of Minions a player can purchase.
 amountBuyMinion: 100
 
 
-# Số Minion tối đa mà người chơi có thể bán.
+# Maximum number of Minions a player can sell.
 amountSellMinion: 100
 
 
-# Đây là nơi để bạn chỉnh sửa những tin nhắn loại lỗi, không đủ điều kiện đến người chơi.
-error-consoleSender: " §cVui lòng sử dụng lệnh trong game!"
-error-notEnoughMoney: " §cBạn không đủ tiền để mua Minion!"
-error-notFoundMinion: " §cKhông có đủ Minion trong túi đồ!"
+# This is the place to edit your ineligible error messages.
+error-consoleSender: "§cPlease use the command in the game!"
+error-notEnoughMoney: "§cYou can't afford Minion!"
+error-notFoundMinion: "§cNot enough Minions in your inventory!"
 
 
-# Đây là nơi để bạn chỉnh sửa những tin nhắn loại thành công đến người chơi.
-success-boughtMinion: " §aĐã mua §f{amount} §acon Minion thành công!"
-success-deductionMoney: " §aĐã trừ §f{buy}$ §atừ tài khoản của bạn!"
-success-sellMinion: " §aĐã bán thành công §f{amount} §acon Minion"
-success-addMoney: " §aĐã cộng §f{sell}$ §avào tài khoản §f{player}§a."
+# This is the place for you to edit your successful type messages to players.
+success-boughtMinion: "§5Bought §6${amount} §6child Minion succeeded!"
+success-deductionMoney: "§5Added §6${buy} §5from your account!"
+success-sellMinion: "§5Successfully sold §6${amount} §5child Minion"
+success-addMoney: "§5Added §6${sell} §5to user §6{player} §5."
 
-# {amount} > Số lượng Minion đã mua/bán.
-# {buy} > Số tiền bị trừ khi mua x Minion.
-# {sell} > Số tiền được cộng vào tài khoản khi bán x Minion.
-# {player} > Tên người chơi.
+# {amount}> Minion amount bought / sold.
+# {buy}> Amount is deducted when buying x Minion.
+# {sell}> The amount is added to the account when selling x Minion.
+# {player}> Player name.
