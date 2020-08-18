@@ -17,7 +17,7 @@ class MinionShop extends PluginBase{
             "Minion" => "Minion",
             "FormAPI" => "FormAPI"] as $plugins){
             if(!$this->getServer()->getPluginManager()->getPlugin($plugins)){
-                $this->getLogger()->error("You have not installed the plugin ". $plugins.". Please install all 3 plugins: FormAPI, EconomyAPI, Minion for the plugin to work smoothly.
+                $this->getLogger()->error("You have not installed the plugin ". $plugins.". Please install all 3 plugins: FormAPI, EconomyAPI, Minion for the plugin to work smoothly.");
                 $this->getServer()->getPluginManager()->disablePlugin($this);
                 return;
             }
