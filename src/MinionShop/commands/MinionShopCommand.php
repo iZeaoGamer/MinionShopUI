@@ -21,7 +21,7 @@ class MinionShopCommand extends Command{
     $this->plugin = $plugin;
     parent::__construct("minionshop");
     $this->setDescription("MinionShop command");
-    $this->setPermission("minionshop.command");
+    //$this->setPermission("minionshop.command");
     $this->setAliases(["ms"]);
     }
     public function getPlugin(): Plugin{
@@ -57,10 +57,10 @@ class MinionShopCommand extends Command{
         });
         $form->setTitle($this->plugin->config->get("title"));
         $money = EconomyAPI::getInstance()->myMoney($player);
-        $form->setContent("§l§fTài khoản: §a". $player->getName() ." §f| CREDITS: §e". $money ."$");
-        $form->addButton("§l§aMUA MINION\n§f[NHẤN VÀO ĐỂ MUA]");
-        $form->addButton("§l§cBÁN MINION\n§f[NHẤN VÀO ĐỂ BÁN]");
-        $form->addButton("§l§eBẢNG GIÁ MINION\n§f[NHẤN VÀO ĐỂ XEM]");
+        $form->setContent(Textformat::colorize("&5&lAccount: &6&l" . $player->getName() . "&8| &5Current Balance: &6$". number_format($money)));
+        $form->addButton("§l§2BUY MINION\n§7[CLICK TO BUY]");
+        $form->addButton("§l§4MINION SALE\n§7[CLICK TO SELL]");
+        $form->addButton("§l§eMINION PRICE LIST\n§7[CLICK TO VIEW]");
         $form->sendToPlayer($player);
         return $form;
     }
@@ -90,8 +90,8 @@ class MinionShopCommand extends Command{
     });
         $form->setTitle($this->plugin->config->get("title"));
         $money = EconomyAPI::getInstance()->myMoney($player);
-        $form->addLabel("§l§fTài khoản: §a". $player->getName() ." §f| CREDITS: §e". $money ."$");
-        $form->addSlider("§lSố lượng", 1, $this->plugin->config->get("amountBuyMinion"), 1);
+        $form->addLabel(Textformat::colorize("&5&lAccount: &6&l" . $player->getName() . "&8| &5Current Balance: &6$". number_format($money)));
+        $form->addSlider("amount", 1, $this->plugin->config->get("amountBuyMinion"), 1);
         $form->sendToPlayer($player);
         return $form;
     }
@@ -121,8 +121,8 @@ class MinionShopCommand extends Command{
     });
         $form->setTitle($this->plugin->config->get("title"));
         $money = EconomyAPI::getInstance()->myMoney($player);
-        $form->addLabel("§l§fTài khoản: §a". $player->getName() ." §f| CREDITS: §e". $money ."$");
-        $form->addSlider("§lSố lượng", 1, $this->plugin->config->get("amountSellMinion"), 1);
+        $form->addLabel(Textformat::colorize("&5&lAccount: &6&l" . $player->getName() . "&8| &5Current Balance: &6$". number_format($money)));
+        $form->addSlider("amount", 1, $this->plugin->config->get("amountSellMinion"), 1);
         $form->sendToPlayer($player);
         return $form;
     }
@@ -141,8 +141,8 @@ class MinionShopCommand extends Command{
         });
         $form->setTitle($this->plugin->config->get("title"));
         $money = EconomyAPI::getInstance()->myMoney($player);
-        $form->setContent("§l§fTài khoản: §a". $player->getName() ." §f| CREDITS: §e". $money ."$\n§l§f> §aGiá mua Minion: §e". $this->plugin->config->get("price") ."$ / 1 con\n§l§f> §aGiá bán Minion: §e". $this->plugin->config->get("sell") ."$ / 1 con");
-        $form->addButton("§l§eTRỞ LẠI.\n[NHẤN VÀO ĐỂ TRỞ LẠI]");
+        $form->setContent("§l§5Account: §6". $player->getName() ." §8| §5Current Balance:  §6$". number_format($money) ."\n§l§7> §2Purchase price Minion: §e". $this->plugin->config->get("price") ."$ / 1 child \n§l§7> §2Price of Minion §6". $this->plugin->config->get("sell") ."$ / 1 child");
+        $form->addButton("§l§cBACK. \n[CLICK TO BACK]");
         $form->sendToPlayer($player);
         return $form;
     }
